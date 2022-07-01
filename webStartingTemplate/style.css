@@ -38,18 +38,22 @@ body{
     background-attachment: fixed;
 }
 /*small devices (landscape phones, 576px and up)*/
-.sidebar{
-    width: 50px;
-}
-.sidebar ul li{
-    text-align: center;
-}
-.sidebar ul li span:nth-child(2)
+@media screen and (min-width:576px)
 {
-    display: none;
-}
-.main-content{
-    margin-left: 50px;
+    .sidebar{
+        width: 50px;
+    }
+    .sidebar ul li{
+        text-align: center;
+    }
+    .sidebar ul li span:nth-child(2)
+    {
+        display: none;
+    }
+    
+    .maincontent{
+        margin-left: 50px;
+    }
 }
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
@@ -68,7 +72,7 @@ body{
 .sidebar ul li i{
     font-size: 20px;
 }
-.main-content{
+.maincontent{
     margin-left: 50px;
 }
 }
@@ -89,7 +93,7 @@ body{
     .sidebar ul li i{
         font-size: 30px;
     }
-    .main-content{
+    .maincontent{
         margin-left: 100px;
     }
 }
@@ -107,12 +111,12 @@ body{
     .sidebar ul li i{
         font-size: 20px;
     }
-    .main-content{
+    .maincontent{
         margin-left: 200px;
     }
 }
 @media (min-width: 1200px){
-    sidebar{
+    .sidebar{
         width: 200px;
     }
     .sidebar ul li{
@@ -125,7 +129,7 @@ body{
 .sidebar ul li i{
     font-size: 20px;
 }
-.main-content{
+.maincontent{
     margin-left: 200px;
 }
 }
