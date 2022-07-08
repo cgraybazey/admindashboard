@@ -38,7 +38,12 @@ body{
     background-attachment: fixed;
 }
 /*small devices (landscape phones, 576px and up)*/
+<<<<<<< HEAD
 @media screen and (min-widh: 576px){
+=======
+@media screen and (min-width:576px)
+{
+>>>>>>> bd9d5cc37366c5255bcfd03c4dabcc0e9240e440
     .sidebar{
         width: 50px;
     }
@@ -49,10 +54,17 @@ body{
     {
         display: none;
     }
+<<<<<<< HEAD
     .main-content{
         margin-left: 50px;
     }
     
+=======
+    
+    .maincontent{
+        margin-left: 50px;
+    }
+>>>>>>> bd9d5cc37366c5255bcfd03c4dabcc0e9240e440
 }
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
@@ -115,7 +127,7 @@ body{
     }
 }
 @media (min-width: 1200px){
-    sidebar{
+    .sidebar{
         width: 200px;
     }
     .sidebar ul li{
