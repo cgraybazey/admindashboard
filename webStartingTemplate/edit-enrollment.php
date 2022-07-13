@@ -10,16 +10,7 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
 	$gender = $fetchstudent['gender'];
 	$course = $fetchstudent['course'];
 }
-		//updating user records
-		if(isset($_POST['updateEnrollment']))
-		{
-			//fetch form data
-			$fullname =$_POST['fullname'];
-			$email = $_POST['email'];
-			$phonenumber = $_POST['phonenumber'];
-			$gender = $_POST['gender'];
-			$course =$_POST['course'];
-		}
+	require_once('logics/process-update.php')
 ?>
 
 
@@ -30,7 +21,8 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
 <body>
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
-	<?php require_once('includes/sidebar.php')?>
+	<?php 
+	// require_once('includes/sidebar.php')?>
 		
 	</div>
 	<div class="maincontent">

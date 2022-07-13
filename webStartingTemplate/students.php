@@ -9,7 +9,9 @@ require_once('logics/dbconnection.php');
 	<!-- All our code. write here   -->
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
-	<?php require_once('includes/sidebar.php')?>
+	<?php 
+	require_once('includes/sidebar.php')
+	?>
 	</div>
 	<div class="maincontent">
 		<div class="container-fluid">
@@ -46,10 +48,10 @@ require_once('logics/dbconnection.php');
 											<a href="edit-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
 											</a>
-											<a href="#" class="btn btn-info btn-sm">
+											<a href="view-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-info btn-sm">
 												<i class="fa fa-eye"></i>
 											</a>
-											<a href="#" class="btn btn-danger btn-sm">
+											<a href="delete-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-danger btn-sm">
 												<i class="fa fa-trash"></i>
 											</a>
 										</td>
