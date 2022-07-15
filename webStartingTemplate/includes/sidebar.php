@@ -25,5 +25,12 @@
 						<span>students</span>  
 					</a>
 				</li>
+				<li>
+                    <a href="contactus.php">
+						<span> <i class="fa fa-envelope"></i></span>
+						<span>message</span>  
+					</a>
+				</li>
 			</ul>
+
 		</nav>

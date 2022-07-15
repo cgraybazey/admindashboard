@@ -1,9 +1,11 @@
 <?php
+$message="";
 require_once('logics/dbconnection.php');
 
 $querystudent = mysqli_query($conn,"SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
 while($fetchstudent = mysqli_fetch_array($querystudent))
 {
+	$id = $fetchstudent['no'];
 	$fullname = $fetchstudent['fullname'];
 	$email = $fetchstudent['email'];
 	$phonenumber = $fetchstudent['phonenumber'];
@@ -22,7 +24,8 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
 	<?php 
-	// require_once('includes/sidebar.php')?>
+ 		require_once('includes/sidebar.php')
+	?>
 		
 	</div>
 	<div class="maincontent">
@@ -32,10 +35,10 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
                    <div class="card">
                         <div class="card-header bg-dark text-white text-center">
                             <h4>Edit Student <?php echo $fullname ?></h4>
-							<form action="enroll.php" method="POST"> 
+							<?php echo $message?>
 						</div>
 						<div class="card-body">
-							<form action="">
+							<form action="edit-enrollment.php?id=<?php echo $id?>" method="POST">
 							<div class="row">
 								<div class="mb-3 col-lg-6">
 									<label for="Fullname" class="form-label">fullName</label>
@@ -58,11 +61,6 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
 									</select>
                    			 	</div>
 							</div>
-							<div class="row pt-3">
-								<div class="col-lg-6">
-								<button type="submit" class="btn btn-primary">Update records</button>
-							</div>
-							</div>
 							<div class="row pt-5">
 								<div class="col-lg-12">
 									<label for="whats your preffered course?" class="form-label">what is your perffered course</label>
@@ -74,7 +72,7 @@ while($fetchstudent = mysqli_fetch_array($querystudent))
 								</div>
 							</div>					
 							<br>                    
-          					<button type="submit" class="btn btn-primary" name="enroll">submit application</button>
+          					<button type="submit" class="btn btn-primary" name="updateEnrollment">submit application</button>
 							</form>
               			</div>
             		</div>

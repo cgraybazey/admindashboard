@@ -6,6 +6,7 @@ $sqldeletestudent =mysqli_query($conn,
 if($sqldeletestudent)
 {
     echo "üser deleted successfully";
+    header('location:students.php');
 }
 else
 {

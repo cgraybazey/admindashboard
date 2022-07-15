@@ -1,5 +1,7 @@
 <?php
 require_once('logics/dbconnection.php');
+//counting all number of students
+
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +20,13 @@ require_once('logics/dbconnection.php');
 			<div class="row">
 				<div class="col-lg-12 pt-5">
 					<div class="card-header bg-dark text-white text-center">
-					<span>students</span>
+					<span>messages</span>
 				</div>
 					<div class="card-body">
 					<table class="table table-striped table-hover table-responsive">
 						<thead>
 							<tr>
-								<th>No.</th>
+                            <th>No.</th>
 								<th>Full name</th>
 								<th>phone Number</th>
 								<th>Email</th>
@@ -32,12 +34,10 @@ require_once('logics/dbconnection.php');
 								<th>course</th>
 								<th>Enrolled on</th>
 								<th>Action</th>
-							</tr>
 						</thead>
 							<tbody>
-								<?php while($fetchEnrollmentRecord=mysqli_fetch_array($sql)){?>
-									<tr>
-										<td><?php echo $fetchEnrollmentRecord['no']?></td>
+                                    <?php while($fetchEnrollmentRecord=mysqli_fetch_array($sql)){?>
+									<tr><td><?php echo $fetchEnrollmentRecord['no']?></td>
 										<td><?php echo $fetchEnrollmentRecord['fullname']?></td>
 										<td><?php echo $fetchEnrollmentRecord['phonenumber']?></td>
 										<td><?php echo $fetchEnrollmentRecord['email']?></td>
@@ -45,19 +45,6 @@ require_once('logics/dbconnection.php');
 										<td><?php echo $fetchEnrollmentRecord['course']?></td>
 										<td><?php echo $fetchEnrollmentRecord['created-at']?></td>
 										<td>
-											<a href="edit-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</a>
-											<a href="view-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-info btn-sm">
-												<i class="fa fa-eye"></i>
-											</a>
-											<a href="delete-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no']?>" class="btn btn-danger btn-sm">
-												<i class="fa fa-trash"></i>
-											</a>
-											<a href="contactus.php?id=<?php echo $fetchcontactusRecord['no']?>" class="btn btn-danger btn-sm">
-												<i class="fa fa-envelope"></i>
-											</a>
-										</td>
 									</tr>
 								<?php }?>
 								

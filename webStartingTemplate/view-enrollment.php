@@ -20,7 +20,7 @@ while($fetchstudent=mysqli_fetch_array($sqlfetchenrolledstudent))
 	<?php require_once('includes/navbar.php')?>
 	<div class="sidebar">
 	<?php 
-	// require_once('includes/sidebar.php')?>
+	 require_once('includes/sidebar.php')?>
 		
 	</div>
 	<div class="maincontent">
