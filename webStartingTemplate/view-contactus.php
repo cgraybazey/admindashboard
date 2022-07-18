@@ -2,14 +2,14 @@
 //1.database connection
 require_once('logics/dbconnection.php');
 $sqlfetchenrolledstudent =mysqli_query($conn,
-"SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
+"SELECT * FROM contactus WHERE no='".$_GET['id']."' ");
 while($fetchstudent=mysqli_fetch_array($sqlfetchenrolledstudent))
 {
-	$fullname = $fetchstudent['fullname'];
+	$firstname= $fetchstudent['firstname'];
+	$lastname = $fetchstudent['lastname'];
 	$email = $fetchstudent['email'];
 	$phonenumber = $fetchstudent['phonenumber'];
-	$gender = $fetchstudent['gender'];
-	$course = $fetchstudent['course'];
+	$message= $fetchstudent['message'];
 	$createdat = $fetchstudent['created-at'];
 }
 ?>
@@ -33,9 +33,9 @@ while($fetchstudent=mysqli_fetch_array($sqlfetchenrolledstudent))
 						</div>
 						<div class="card-body">
 							<ul class="list-group">
-								<li class="list-group-item">Full Name:<span class="float-end badge bg-primary"><?php echo $fullname?><span></li>
-								<li class="list-group-item">Email:<span class="float-end badge bg-secondary"><?php echo $email?><span></li>
-								<li class="list-group-item">Phone Number:<span class="float-end badge bg-danger"><?php echo $phonenumber?><span></li>
+								<li class="list-group-item">firstName:<span class="float-end badge bg-primary"><?php echo $firstname?><span></li>
+								<li class="list-group-item">lastname:<span class="float-end badge bg-secondary"><?php echo $lastname?><span></li>
+								<li class="list-group-item">email:<span class="float-end badge bg-danger"><?php echo $email?><span></li>
 							</ul>
 						</div>
 					</div>
@@ -43,15 +43,15 @@ while($fetchstudent=mysqli_fetch_array($sqlfetchenrolledstudent))
 				<div class="col-lg-6 pt-5">
 					<div class="card">
 						<div class="card-header bg-dark text-white text-center">
-							<h4 class="card-title">other Information</h4>
+							<h4 class="card-title">Personal Information</h4>
 						</div>
 						<div class="card-body">
 							<ul class="list-group">
-								<li class="list-group-item">Gender:<span class="float-end badge bg-primary"><?php echo $gender?><span></li>
-								<li class="list-group-item">course:<span class="float-end badge bg-secondary"><?php echo $course?><span></li>
+								<li class="list-group-item">phonenumber:<span class="float-end badge bg-primary"><?php echo $phonenumber?><span></li>
+								<li class="list-group-item">message:<span class="float-end badge bg-secondary"><?php echo $message?><span></li>
 								<li class="list-group-item">created at:<span class="float-end badge bg-danger"><?php echo $createdat?><span></li>
 							</ul>
-						</div>
+							</div>
 					</div>
 				</div>
 		</div>
